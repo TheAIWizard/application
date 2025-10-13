@@ -1,0 +1,18 @@
+2025-10-13 21:13:38.126 | INFO     | __main__:<module>:41 - API token has been configured properly
+2025-10-13 21:13:38.313 | SUCCESS  | __main__:<module>:81 - 74.4% de bonnes réponses sur les données de test pour validation
+2025-10-13 21:13:38.314 | DEBUG    | __main__:<module>:82 - --------------------
+2025-10-13 21:13:38.314 | INFO     | __main__:<module>:83 - Matrice de confusion
+2025-10-13 21:13:38.314 | DEBUG    | __main__:<module>:84 - [[46 10]
+ [13 21]]
+2025-10-13 21:13:50.197 | INFO     | __main__:<module>:41 - API token has been configured properly
+2025-10-13 21:13:50.370 | SUCCESS  | __main__:<module>:81 - 76.7% de bonnes réponses sur les données de test pour validation
+2025-10-13 21:13:50.370 | DEBUG    | __main__:<module>:82 - --------------------
+2025-10-13 21:13:50.370 | INFO     | __main__:<module>:83 - Matrice de confusion
+2025-10-13 21:13:50.370 | DEBUG    | __main__:<module>:84 - [[47  8]
+ [13 22]]
+2025-10-13 21:51:39.729 | INFO     | __main__:<module>:41 - API token has been configured properly
+2025-10-13 21:51:39.889 | SUCCESS  | __main__:<module>:81 - 78.9% de bonnes réponses sur les données de test pour validation
+2025-10-13 21:51:39.889 | DEBUG    | __main__:<module>:82 - --------------------
+2025-10-13 21:51:39.889 | INFO     | __main__:<module>:83 - Matrice de confusion
+2025-10-13 21:51:39.889 | DEBUG    | __main__:<module>:84 - [[50  6]
+ [13 21]]

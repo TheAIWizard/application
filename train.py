@@ -3,6 +3,7 @@ Prediction de la survie d'un individu sur le Titanic
 """
 
 import os
+import joblib
 from dotenv import load_dotenv
 import argparse
 from loguru import logger
@@ -81,3 +82,8 @@ logger.success(f"{score:.1%} de bonnes réponses sur les données de test pour v
 logger.debug(20 * "-")
 logger.info("Matrice de confusion")
 logger.debug(matrix)
+
+# Save the model
+
+joblib.dump(pipe, 'model.joblib')
+

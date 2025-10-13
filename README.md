@@ -14,3 +14,5 @@ Pour installer les dépendances
 ```bash
 pip install -r requirements.txt
 ```
+
+[![ci](https://github.com/TheAIWizard/application/actions/workflows/prod.yml/badge.svg)](https://github.com/TheAIWizard/application/actions/workflows/prod.yml)
