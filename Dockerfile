@@ -11,7 +11,7 @@ RUN pip install -r requirements.txt
 COPY src ./src
 COPY app ./app
 COPY train.py .
-COPY model.joblib
+COPY model.joblib .
 
 # Give permission to run.sh
 RUN chmod +x app/run.sh
