@@ -2,3 +2,9 @@ config.yaml
 __pycache__/
 data/**/*.csv
 titanic/
+/.quarto/
+*.html
+*_files
+_site/
+
+**/*.quarto_ipynb
