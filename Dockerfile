@@ -15,4 +15,4 @@ COPY train.py .
 # Give permission to run.sh
 RUN chmod +x app/run.sh
 
-CMD ["./app/run.sh"]
+CMD ["bash", "-c", "./app/run.sh"]
