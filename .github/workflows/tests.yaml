@@ -20,6 +20,6 @@ jobs:
             pip install -r requirements.txt
       # You can test your matrix by printing the current Python version
       - name: Check quality code
-        run: pylint main.py --fail-under=6
+        run: pylint train.py --fail-under=6
       - name: Run code
-        run: python main.py
+        run: python train.py
