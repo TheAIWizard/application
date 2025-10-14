@@ -16,3 +16,5 @@ pip install -r requirements.txt
 ```
 
 [![ci](https://github.com/TheAIWizard/application/actions/workflows/prod.yml/badge.svg)](https://github.com/TheAIWizard/application/actions/workflows/prod.yml)
+
+[Site web de notre app](https://TheAIWizard.github.io/application)
