@@ -1,5 +1,7 @@
 """A simple API to expose our trained RandomForest model for Tutanic survival."""
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
 from joblib import load
 
 import pandas as pd
@@ -12,6 +14,14 @@ app = FastAPI(
     "Application de prédiction de survie sur le Titanic 🚢 <br>Une version par API pour faciliter la réutilisation du modèle 🚀" +\
         "<br><br><img src=\"https://media.vogue.fr/photos/5faac06d39c5194ff9752ec9/1:1/w_2404,h_2404,c_limit/076_CHL_126884.jpg\" width=\"200\">"
     )
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/", tags=["Welcome"])
