@@ -8,8 +8,8 @@ import argparse
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from build_pipeline import create_pipeline
-from train_evaluate import evaluate_model
+from src.models.build_pipeline import create_pipeline
+from src.models.train_evaluate import evaluate_model
 
 
 # ENVIRONMENT CONFIGURATION ---------------------------
@@ -24,7 +24,7 @@ args = parser.parse_args()
 
 n_trees = args.n_trees
 jeton_api = os.environ.get("JETON_API", "")
-data_path = os.environ.get("DATA_PATH", "data.csv")
+data_path = os.environ.get("DATA_PATH", "./data/raw/data.csv")
 
 MAX_DEPTH = None
 MAX_FEATURES = "sqrt"
@@ -37,7 +37,7 @@ else:
 
 # IMPORT ET STRUCTURATION DONNEES --------------------------------
 
-TrainingData = pd.read_csv("data.csv")
+TrainingData = pd.read_csv(data_path)
 
 y = TrainingData["Survived"]
 X = TrainingData.drop("Survived", axis="columns")
