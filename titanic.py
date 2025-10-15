@@ -76,9 +76,9 @@ plt.show()
 y = TrainingData["Survived"]
 X = TrainingData.drop("Survived", axis="columns")
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
-pd.concat([X_train, y_train], axis = 1).to_csv("train.csv")
-pd.concat([X_test, y_test], axis = 1).to_csv("test.csv")
+x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
+pd.concat([x_train, y_train], axis = 1).to_csv("train.csv")
+pd.concat([x_test, y_test], axis = 1).to_csv("test.csv")
 
 
 # PIPELINE ----------------------------
@@ -130,12 +130,12 @@ pipe = Pipeline(
 
 # ESTIMATION ET EVALUATION ----------------------
 
-pipe.fit(X_train, y_train)
+pipe.fit(x_train, y_train)
 
 # score
-rdmf_score = pipe.score(X_test, y_test)
+rdmf_score = pipe.score(x_test, y_test)
 print(f"{rdmf_score:.1%} de bonnes réponses sur les données de test pour validation")
 
 print(20 * "-")
 print("matrice de confusion")
-print(confusion_matrix(y_test, pipe.predict(X_test)))
+print(confusion_matrix(y_test, pipe.predict(x_test)))
