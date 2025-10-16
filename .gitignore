@@ -1,6 +1,10 @@
 config.yaml
 __pycache__/
+<<<<<<< HEAD
 titanic/
 *.csv
 *.parquet
 
+=======
+.env
+>>>>>>> 324d0fd6c6350992198440fe414098cbb3fed710

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 aiobotocore==2.25.0
 aiohappyeyeballs==2.6.1
 aiohttp==3.13.0
@@ -192,3 +193,12 @@ wrapt==1.17.3
 xgboost==3.0.5
 yarl==1.22.0
 zipp==3.23.0
+=======
+pandas
+PyYAML
+scikit-learn
+python-dotenv
+loguru
+pylint
+black
+>>>>>>> 324d0fd6c6350992198440fe414098cbb3fed710
