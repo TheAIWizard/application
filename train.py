@@ -3,14 +3,14 @@ Prediction de la survie d'un individu sur le Titanic
 """
 
 import os
-import joblib
 from dotenv import load_dotenv
 import argparse
 from loguru import logger
+from joblib import dump
 
 import pathlib
 import pandas as pd
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, GridSearchCV
 
 from src.pipeline.build_pipeline import create_pipeline
 from src.models.train_evaluate import evaluate_model
@@ -60,7 +60,6 @@ pd.concat([X_train, y_train], axis = 1).to_parquet(data_train_path)
 pd.concat([X_test, y_test], axis = 1).to_parquet(data_test_path)
 
 
-
 # PIPELINE ----------------------------
 
 
@@ -69,11 +68,32 @@ pipe = create_pipeline(
     n_trees, max_depth=MAX_DEPTH, max_features=MAX_FEATURES
 )
 
+param_grid = {
+    "classifier__n_estimators": [10, 20, 50],
+    "classifier__max_leaf_nodes": [5, 10, 50],
+}
+
+pipe_cross_validation = GridSearchCV(
+    pipe,
+    param_grid=param_grid,
+    scoring=["accuracy", "precision", "recall", "f1"],
+    refit="f1",
+    cv=5,
+    n_jobs=5,
+    verbose=1,
+)
+
+pipe_cross_validation.fit(X_train, y_train)
+
+pipe = pipe_cross_validation.best_estimator_
+
 
 # ESTIMATION ET EVALUATION ----------------------
 
 pipe.fit(X_train, y_train)
 
+with open("model.joblib", "wb") as f:
+    dump(pipe, f)
 
 # Evaluate the model
 score, matrix = evaluate_model(pipe, X_test, y_test)
@@ -82,8 +102,3 @@ logger.success(f"{score:.1%} de bonnes réponses sur les données de test pour v
 logger.debug(20 * "-")
 logger.info("Matrice de confusion")
 logger.debug(matrix)
-
-# Save the model
-
-joblib.dump(pipe, 'model.joblib')
-
