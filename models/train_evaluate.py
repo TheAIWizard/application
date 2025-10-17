@@ -1,16 +1,5 @@
-<<<<<<< HEAD
-from loguru import logger
 from sklearn.metrics import confusion_matrix
 
-@logger.catch
-=======
-"""
-Evaluation du modèle
-"""
-from sklearn.metrics import confusion_matrix
-
-
->>>>>>> 62d9eb16ee0c8dd94dbdd08db0e7be8a9cf4699f
 def evaluate_model(pipe, X_test, y_test):
     """
     Evaluate the model by calculating the score and confusion matrix.
