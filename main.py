@@ -6,6 +6,7 @@ import os
 from dotenv import load_dotenv
 import argparse
 from loguru import logger
+import joblib
 
 import pathlib
 import pandas as pd
@@ -81,3 +82,6 @@ logger.success(f"{score:.1%} de bonnes réponses sur les données de test pour v
 logger.debug(20 * "-")
 logger.info("Matrice de confusion")
 logger.debug(matrix)
+
+# EXPORT MODELE
+joblib.dump(pipe, "model.joblib")

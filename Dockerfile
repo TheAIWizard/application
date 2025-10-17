@@ -8,7 +8,11 @@ RUN apt-get -y update && \
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
+COPY app ./app
+COPY train.py .
+RUN chmod +x app/run.sh
+
 COPY src ./src
 COPY main.py .
 
-CMD ["python3", "main.py"]
+CMD ["bash", "-c", "./app/run.sh"]

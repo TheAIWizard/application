@@ -5,6 +5,7 @@ Prediction de la survie d'un individu sur le Titanic
 import os
 from dotenv import load_dotenv
 import argparse
+import joblib
 
 import pandas as pd
 from loguru import logger
@@ -66,3 +67,6 @@ logger.debug(f"{score:.1%} de bonnes réponses sur les données de test pour val
 logger.debug(20 * "-")
 logger.debug("matrice de confusion")
 logger.debug(matrix)
+
+# EXPORT MODELE
+joblib.dump(pipe, "model.joblib")
