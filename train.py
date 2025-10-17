@@ -10,7 +10,7 @@ from joblib import dump
 
 import pathlib
 import pandas as pd
-from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.model_selection import train_test_split
 
 from src.pipeline.build_pipeline import create_pipeline
 from src.models.train_evaluate import evaluate_model
@@ -68,6 +68,7 @@ pipe = create_pipeline(
     n_trees, max_depth=MAX_DEPTH, max_features=MAX_FEATURES
 )
 
+<<<<<<< HEAD
 param_grid = {
     "classifier__n_estimators": [10, 20, 50],
     "classifier__max_leaf_nodes": [5, 10, 50],
@@ -87,6 +88,8 @@ pipe_cross_validation.fit(X_train, y_train)
 
 pipe = pipe_cross_validation.best_estimator_
 
+=======
+>>>>>>> b5d42b1a0a2f7ff5789d51617f5ed9447d5bb212
 
 # ESTIMATION ET EVALUATION ----------------------
 

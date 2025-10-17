@@ -8,12 +8,12 @@ RUN apt-get -y update && \
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY src ./src
 COPY app ./app
 COPY train.py .
 COPY model.joblib .
-
-# Give permission to run.sh
 RUN chmod +x app/run.sh
+
+COPY src ./src
+COPY train.py .
 
 CMD ["bash", "-c", "./app/run.sh"]

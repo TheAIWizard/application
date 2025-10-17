@@ -7,9 +7,9 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - nathan-reproductibilite-ensea.lab.sspcloud.fr
+    - titanicml.lab.sspcloud.fr
   rules:
-  - host: nathan-reproductibilite-ensea.lab.sspcloud.fr
+  - host: titanicml.lab.sspcloud.fr
     http:
       paths:
       - path: /

@@ -2,10 +2,14 @@ name: ci
 
 on:
   push:
+<<<<<<< HEAD
     branches:
       - main
       - dev
       
+=======
+
+>>>>>>> b5d42b1a0a2f7ff5789d51617f5ed9447d5bb212
 jobs:
   docker:
     runs-on: ubuntu-latest

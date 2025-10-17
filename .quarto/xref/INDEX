@@ -1,0 +1,11 @@
+{
+  "index.qmd": {
+    "index.html": "ecd48ffe"
+  },
+  "notebooks/titanic.ipynb": {
+    "titanic.html": "96b594d3"
+  },
+  "brouillon.ipynb": {
+    "brouillon.html": "b84503b0"
+  }
+}
