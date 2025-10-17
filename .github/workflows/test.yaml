@@ -6,7 +6,10 @@ on:
       - main
       - dev
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 55c101eeb1ac10aeca5693891a7079e17d0b459e
 jobs:
   build:
 
@@ -28,4 +31,8 @@ jobs:
         run: |
           pylint src --fail-under=6
       - name: Test Python code
+<<<<<<< HEAD
         run: python train.py
+=======
+        run: python main.py
+>>>>>>> 55c101eeb1ac10aeca5693891a7079e17d0b459e
