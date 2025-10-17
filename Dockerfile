@@ -13,6 +13,6 @@ COPY train.py .
 RUN chmod +x app/run.sh
 
 COPY src ./src
-COPY main.py .
+COPY train.py .
 
 CMD ["bash", "-c", "./app/run.sh"]
